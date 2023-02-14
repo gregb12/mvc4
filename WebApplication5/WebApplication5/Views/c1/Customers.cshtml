@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Customer>;
+
+    
+    @*
+   
+        *@
+
+
+@Html.ActionLink("Add","Add")
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.first_name)</th>
+            <th>@Html.DisplayNameFor(model=>model.last_name)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+      @foreach(var item in Model)
+      {
+       <tr>
+            <td>@Html.DisplayFor(modelItem =>@item.first_name)</td>
+            <td>@Html.DisplayFor(modelItem =>@item.last_name)</td>
+            <td><a asp-action="Edit" asp-route-id="@item.id">Edit</a>|<a asp-action="Delete" asp-route-id="@item.id">Delete</a></td>
+            
+        </tr>
+      }
+      </tbody>
+ 
+    </table>
+    
+  <a asp-action="Search" asp-route-search="Greg1">Search</a>
